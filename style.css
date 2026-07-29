@@ -1,0 +1,80 @@
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#0b0b0d;color:#f5f5f5;font-family:"Inter",sans-serif;line-height:1.7;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 15% 20%,#7850ff2e,transparent 30%),radial-gradient(circle at 85% 70%,#00c8ff1f,transparent 30%),#0b0b0d}
+body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.18;background-image:linear-gradient(#ffffff0a 1px,transparent 1px),linear-gradient(90deg,#ffffff0a 1px,transparent 1px);background-size:50px 50px;transform:perspective(500px) rotateX(60deg) scale(1.8);transform-origin:center bottom}
+
+nav{width:90%;max-width:1250px;height:75px;margin:20px auto;padding:0 25px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:15px;z-index:1000;background:#0f0f14b8;border:1px solid #ffffff1a;border-radius:20px;backdrop-filter:blur(18px);box-shadow:0 15px 40px #00000059,inset 0 1px #ffffff14}
+.logo{font:600 20px "JetBrains Mono",monospace;letter-spacing:1px}
+.logo span{display:inline-block;width:7px;height:7px;margin-left:5px;border-radius:50%;background:#fff;box-shadow:0 0 15px #fff}
+nav ul{display:flex;gap:35px;list-style:none}
+nav a{color:#aaa;text-decoration:none;font-size:13px;letter-spacing:1.5px;transition:.3s}
+nav a:hover{color:#fff;text-shadow:0 0 15px #fff}
+
+#hero{min-height:90vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+#canvas3d{position:absolute;inset:0;z-index:0;pointer-events:none}
+#canvas3d canvas{width:100%!important;height:100%!important}
+.hero-inner{width:90%;max-width:1100px;position:relative;z-index:2;padding:100px 0}
+.eyebrow,.tag{font-family:"JetBrains Mono",monospace;color:#aaa;letter-spacing:2px;text-transform:uppercase}
+.hero-inner h1{max-width:900px;margin:20px 0;font:700 clamp(50px,8vw,100px)/1 "Playfair Display",serif;letter-spacing:-4px;background:linear-gradient(120deg,#fff,#888,#fff);background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shine 5s linear infinite}
+@keyframes shine{to{background-position:200%}}
+.hero-inner p{max-width:650px;color:#999;font-size:17px;margin:30px 0}
+.btn-row,.contact-links{display:flex;gap:15px;margin-top:35px}
+.btn,.contact-links a{padding:14px 30px;border-radius:50px;text-decoration:none;font-size:14px;transition:.35s}
+.btn.ghost,.contact-links a{color:#fff;border:1px solid #ffffff40;background:#ffffff0d;backdrop-filter:blur(10px)}
+.btn.ghost:hover,.contact-links a:hover{transform:translateY(-5px);background:#fff;color:#000;box-shadow:0 15px 40px #ffffff26}
+
+section:not(#hero){width:90%;max-width:1200px;margin:auto;padding:120px 0}
+.tag{font-size:13px;letter-spacing:3px;color:#888}
+.sec-title{margin:15px 0 50px;font:clamp(40px,5vw,65px)/1.1 "Playfair Display",serif}
+
+#about{display:grid;grid-template-columns:300px 1fr 1fr;gap:60px;align-items:center}
+.profile-pic{width:300px;height:380px;overflow:hidden;position:relative;border-radius:25px;border:1px solid #ffffff26;background:#111;box-shadow:0 25px 70px #00000080,0 0 50px #7850ff1f;transform:perspective(1000px) rotateY(5deg);transition:.5s}
+.profile-pic:hover{transform:perspective(1000px) rotateY(0) rotateX(3deg) translateY(-10px) scale(1.02);box-shadow:0 35px 80px #0009,0 0 60px #7850ff33}
+.profile-pic img{width:100%;height:100%;display:block;object-fit:cover;transition:.6s}
+.profile-pic:hover img{transform:scale(1.06)}
+
+.stat-grid,.skills-grid{display:grid;gap:15px}
+.stat-grid{grid-template-columns:repeat(3,1fr)}
+.stat{padding:25px 15px;border:1px solid #ffffff1a;border-radius:18px;background:#ffffff09;backdrop-filter:blur(10px);transition:.35s}
+.stat:hover{transform:translateY(-8px);background:#ffffff12;border-color:#ffffff4d}
+.stat b{display:block;font-size:27px}
+.stat span,.skill-cat li{color:#888;font-size:12px}
+
+.skills-grid{grid-template-columns:repeat(4,1fr);gap:20px}
+.skill-cat{padding:30px;min-height:230px;border:1px solid #ffffff1a;border-radius:22px;background:linear-gradient(145deg,#ffffff12,#ffffff05);backdrop-filter:blur(12px);transition:.4s}
+.skill-cat:hover{transform:perspective(800px) rotateX(5deg) rotateY(-5deg) translateY(-10px);box-shadow:20px 25px 50px #0006;border-color:#ffffff40}
+.skill-cat h3{font:16px "JetBrains Mono",monospace;margin-bottom:20px}
+.skill-cat ul{list-style:none}
+.skill-cat li{padding:7px 0;border-bottom:1px solid #ffffff0d;transition:.3s}
+.skill-cat li:hover{color:#fff;padding-left:8px}
+
+#contact{text-align:center;padding:150px 0}
+#contact h2{margin:20px 0;font:clamp(45px,7vw,80px) "Playfair Display",serif}
+#contact p{color:#888;font-size:17px}
+.contact-links{justify-content:center;flex-wrap:wrap}
+.contact-links a{padding:13px 25px}
+
+footer{text-align:center;padding:30px;color:#555;font:11px "JetBrains Mono",monospace;border-top:1px solid #ffffff0d}
+
+@media(max-width:900px){
+nav{width:94%}
+nav ul{gap:15px}
+nav ul li a{font-size:10px}
+#about{grid-template-columns:1fr;text-align:center}
+.profile-pic{width:280px;height:350px;margin:auto}
+.stat-grid{max-width:600px;margin:auto}
+.skills-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:600px){
+nav{height:auto;padding:15px;flex-wrap:wrap;gap:15px}
+nav ul{order:3;width:100%;justify-content:center}
+.hero-inner{padding:80px 0}
+.hero-inner h1{font-size:52px;letter-spacing:-2px}
+.hero-inner p{font-size:15px}
+section:not(#hero){padding:80px 0}
+.skills-grid,.stat-grid{grid-template-columns:1fr}
+.contact-links{flex-direction:column;align-items:center}
+.contact-links a{width:200px}
+}
