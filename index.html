@@ -1,0 +1,178 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>SANGAMESH NILAPNOR — Software Developer</title><link rel="stylesheet" href="style.css"><style>
+/* Rating Section */
+.rating-section {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.rating-section .stars {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.rating-section .stars input {
+  display: none;
+}
+
+.rating-section .stars label {
+  font-size: 45px;
+  color: #555;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.rating-section .stars label:hover,
+.rating-section .stars label:hover ~ label,
+.rating-section .stars input:checked ~ label {
+  color: gold;
+  transform: scale(1.1);
+}
+
+#ratingMessage {
+  margin-top: 20px;
+  font-size: 18px;
+}
+</style></head><body><nav>
+  <div class="logo">SANGAMESH<span></span></div>  <ul>
+    <li><a href="#about">ABOUT</a></li>
+    <li><a href="#skills">SKILLS</a></li>
+    <li><a href="#contact">CONTACT</a></li>
+  </ul>
+</nav><section id="hero">
+  <div id="canvas3d"></div>  <div class="hero-inner">
+    <span class="eyebrow">BCA Student | AI</span><h1>Building clean, scalable software.</h1>
+
+<p>
+  I'm Sangamesh, a second-year BCA student focused on AI and software
+  development. I'm passionate about building real-world projects,
+  improving my technical skills, and creating meaningful solutions.
+</p>
+
+<div class="btn-row">
+  <a href="#contact" class="btn ghost">Get In Touch</a>
+</div>
+
+  </div>
+</section><section id="about">  <div class="profile-pic">
+    <img src="image.jpg" alt="Sangamesh profile photo">
+  </div>  <div>
+    <span class="tag">About</span><h2 class="sec-title">A student who ships.</h2>
+
+<div class="stat-grid">
+  <div class="stat">
+    <b>9+</b>
+    <span>Projects</span>
+  </div>
+
+  <div class="stat">
+    <b>N/A</b>
+    <span>Internships</span>
+  </div>
+
+  <div class="stat">
+    <b>6.6</b>
+    <span>CGPA / 10</span>
+  </div>
+</div>
+
+  </div>  <div>
+    <p>
+      I'm a BCA student with a growing focus on AI and software development.
+      I care about writing clean, readable, and maintainable code that solves
+      real-world problems.
+    </p><p>
+  Outside coursework, I build projects, practise programming, explore
+  new technologies, and continuously improve my skills as a future
+  AI engineer.
+</p>
+
+  </div></section><section id="skills"><span class="tag">Skills</span>
+
+  <h2 class="sec-title">I reach for.</h2>  <div class="skills-grid"><div class="skill-cat">
+  <h3>Languages</h3>
+  <ul>
+    <li>C</li>
+    <li>C++</li>
+    <li>HTML</li>
+    <li>CSS / JS Basics</li>
+  </ul>
+</div>
+
+<div class="skill-cat">
+  <h3>Database</h3>
+  <ul>
+    <li>MySQL</li>
+    <li>Oracle DB</li>
+    <li>DBMS</li>
+  </ul>
+</div>
+
+<div class="skill-cat">
+  <h3>Systems</h3>
+  <ul>
+    <li>OOP</li>
+    <li>Data Structures</li>
+    <li>Computer Networks</li>
+  </ul>
+</div>
+
+<div class="skill-cat">
+  <h3>Practices</h3>
+  <ul>
+    <li>Problem Solving</li>
+    <li>Git & GitHub</li>
+    <li>Software Development</li>
+  </ul>
+</div>
+
+  </div></section><section id="contact"><span class="tag">Contact</span>
+
+  <h2>Let's build something great.</h2>  <p>
+    Open to Software Engineering internships<br>
+    and new opportunities.
+  </p>  <div class="contact-links"><a href="mailto:sanguu724@gmail.com">Email Me</a>
+
+<a href="https://www.linkedin.com/in/sanguu-n-27857b3a/" target="_blank" rel="noopener">LinkedIn</a>
+
+<a href="https://www.instagram.com/akatsuki_724" target="_blank" rel="noopener">Instagram</a>
+
+<a href="https://www.github.com/sanguu724" target="_blank" rel="noopener">GitHub</a>
+
+<a href="https://drive.google.com/file/d/1Uc-UqDMkk-lWQtQl8CPKfdvLVO6Voyed/view" target="_blank" rel="noopener">Resume</a>
+
+  </div></section><!-- ⭐ PORTFOLIO RATING SECTION --><section class="rating-section" id="rating"><span class="tag">Feedback</span>
+
+  <h2 class="sec-title">Rate My Portfolio</h2>  <p>How would you rate your experience?</p>  <div class="stars"><input type="radio" id="star5" name="rating" value="5">
+<label for="star5">★</label>
+
+<input type="radio" id="star4" name="rating" value="4">
+<label for="star4">★</label>
+
+<input type="radio" id="star3" name="rating" value="3">
+<label for="star3">★</label>
+
+<input type="radio" id="star2" name="rating" value="2">
+<label for="star2">★</label>
+
+<input type="radio" id="star1" name="rating" value="1">
+<label for="star1">★</label>
+
+  </div>  <div id="ratingMessage">Select a rating ⭐</div></section><footer>
+  ~~2025 SANGAMESH — Crafted with care~~
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script><script src="script.js"></script><script>
+const stars = document.querySelectorAll('input[name="rating"]');
+const message = document.getElementById('ratingMessage');
+
+stars.forEach(star => {
+  star.addEventListener('change', () => {
+    message.textContent =
+      `Thank you! You rated my portfolio ${star.value} out of 5 ⭐`;
+  });
+});
+</script></body>
+</html>
